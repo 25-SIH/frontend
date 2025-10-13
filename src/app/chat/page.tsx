@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 export default function ChatPage() {
   return (
     <main className="min-h-[100svh]">
-      <section className="mx-auto max-w-3xl px-4 py-6 md:py-10">
+      <section className="mx-auto max-w-5xl px-4 py-6 md:py-10">
         <h1 className="text-pretty text-2xl font-semibold tracking-tight md:text-3xl">Chat with your data</h1>
         <p className="mt-2 text-sm text-muted-foreground">
           Upload a file (image, document, PDF, or audio), then ask questions.
