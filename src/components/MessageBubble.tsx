@@ -2,6 +2,8 @@ import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { cn } from "@/lib/utils";
 import { formatTime } from "@/lib/formatTime";
 import { Message } from "@/types/chat";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 export default function MessageBubble({ message }: { message: Message }) {
   const isUser = message.role === "user";
@@ -23,7 +25,11 @@ export default function MessageBubble({ message }: { message: Message }) {
           isUser ? "bg-primary text-primary-foreground" : "bg-muted"
         )}
       >
-        <div className="whitespace-pre-wrap text-sm">{message.content}</div>
+        <div className="prose prose-sm dark:prose-invert max-w-none">
+          <ReactMarkdown remarkPlugins={[remarkGfm]}>
+            {message.content}
+          </ReactMarkdown>
+        </div>
         <div
           className={cn(
             "mt-1 text-[10px]",
