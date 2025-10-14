@@ -35,7 +35,7 @@ export default function Home() {
         <Link href="/chat" className={styles.launchButton}>
           Launch
           <MdRocketLaunch
-            size={22}
+            size={48}
             style={{ verticalAlign: "middle", marginLeft: "0.25rem" }}
           />
         </Link>

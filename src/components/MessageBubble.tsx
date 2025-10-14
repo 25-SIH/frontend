@@ -14,11 +14,6 @@ export default function MessageBubble({ message }: { message: Message }) {
         isUser ? "justify-end" : "justify-start"
       )}
     >
-      {!isUser && (
-        <Avatar className="h-8 w-8">
-          <AvatarFallback className="text-xs">AI</AvatarFallback>
-        </Avatar>
-      )}
       <div
         className={cn(
           "max-w-[80%] rounded-lg px-3 py-2",
@@ -40,11 +35,6 @@ export default function MessageBubble({ message }: { message: Message }) {
           {formatTime(message.createdAt)}
         </div>
       </div>
-      {isUser && (
-        <Avatar className="h-8 w-8">
-          <AvatarFallback className="text-xs">You</AvatarFallback>
-        </Avatar>
-      )}
     </div>
   );
 }
